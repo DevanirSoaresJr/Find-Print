@@ -11,7 +11,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
     //Declared my TextView
     TextView tvBigArray;
-
+    List<String> tesVSkyrim = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,13 +21,14 @@ public class MainActivity extends AppCompatActivity {
         tvBigArray = findViewById(R.id.tvBigArray);
         /*Initialized my method (method name is findUlfric because Ulfric
         is one of the game characters plus *Spoiler Alert* is the longest string in the Array)*/
-        findUlfric();
+     findUlfric(tesVSkyrim);
     }
     //Here I created the method for finding Ulfric
-    private void findUlfric() {
+    private  void findUlfric(List<String> tesVSkyrim) {
         {
+
             //Created an ArrayList called tesVSkyrim short for The Elder Scrolls V: Skyrim (google it!!!)
-            List<String> tesVSkyrim = new ArrayList<>();
+            tesVSkyrim = new ArrayList<>();
 
             //Added some names of places and characters from the game to fill up my list
             //In this order it is important to note that the index of all arrays starts at 0
@@ -62,15 +63,13 @@ public class MainActivity extends AppCompatActivity {
                     index = i;
 
                 }
-                 //Created a String called it skyrim whatever... here we will have the return values of ao loop
-                String skyrim = (" Item found of index: " + index + "\n" + tesVSkyrim.get(index)+":" + "\n" +
+                //Created a String called it skyrim whatever... here we will have the return values of ao loop
+                String skyrim = (" Item found of index: " + index + "\n" + tesVSkyrim.get(index) + ":" + "\n" +
                         " is the biggest String and has the size of: " + biggestString + " characters");
                 //passed the string to the only textview for visualization purposes.
                 tvBigArray.setText(skyrim);
 
-
             }
-
         }
     }
 }
